@@ -1,0 +1,48 @@
+;  IRL FlowCode Version: Version 10.0
+;  c1995-2015: Visual Flow Coder by 2LResearch
+;
+;  File Name : webcam.py.vfc
+;  File Date : 02:20:46 PM - 20:Mar:2025
+
+event(import cv2);//
+event();//import os
+event();//import numpy
+event();//import sys
+event();//import numpy as np
+end();//
+event(#  MAIN PROGRAM AREA);//
+set(ID = 0 ;);//ID = -1 ;
+set(cap = cv2.VideoCapture( ID ));//cap = cv2.VideoCapture( ID,  cv2.CAP_DSHOW  )
+set();//cv2.namedWindow("cap", cv2.WINDOW_FREERATIO)
+set(cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1280  ));//
+set(cap.set(cv2.CAP_PROP_FRAME_HEIGHT , 720 ));//
+generic(w = cap.get(cv2.CAP_PROP_FRAME_WIDTH ));//
+generic(h =  cap.get(cv2.CAP_PROP_FRAME_HEIGHT ));//
+output(print( w , ' X ' , h ));//
+set();//
+generic();//cap.set(cv2.CAP_PROP_MODE, 3 );
+set(cv2.namedWindow("view", cv2.WINDOW_FREERATIO));//
+set(delay = 3);//
+set(key = -1);//
+set(L = 1);//
+set(row = 0;);//
+set();//ret, frame, frame1 = getImage( 1 );
+loop(while( key== -1 ):);//
+set(ret, frame  = cap.read());//
+output(cv2.imshow( 'view', frame ));// 
+event(key = cv2.waitKey(delay));//////
+lend();//
+set();//
+set(cap.release());//
+set(cv2.destroyAllWindows());//
+set();//  Export  Date: 09:56:36 PM - 29:Mar:2019.
+set();//
+
+
+
+;INSECTA EMBEDDED SESSION INFORMATION
+; 255 16777215 65280 16777088 16711680 255 12632256 0 255 255 65535 65280 1507328
+;    webcam.py   #   .
+; notepad++.exe
+;INSECTA EMBEDDED ALTSESSION INFORMATION
+; 4294965313 4294966910 965 2090 8 138   503   89    python.key  0
